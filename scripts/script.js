@@ -3,7 +3,9 @@ const hangmanImage = document.querySelector(".hangman-box img");
 const keyboardDiv = document.querySelector(".keyboard");
 const guessesText = document.querySelector(".guesses-text b")
 const wordDisplay = document.querySelector(".word-display");
-let currentWord, wrongGuessCount = 0;
+const gameModal = document.querySelector(".game-modal");
+
+let currentWord, correctLetters = [], wrongGuessCount = 0;
 const maxGuesses = 6;
 
 const getRandomWord = () => {
@@ -14,21 +16,33 @@ const getRandomWord = () => {
     wordDisplay.innerHTML = word.split("").map(() => '<li class="letter"></li>').join("");
 }
 
+const gameOver = (isVictory) => {
+    setTimeout(() => {
+        gameModal.classList.add("show");
+    }, 300);
+}
+
+
 const initGame = (button, clickedLetter) => {
     // Checking if clickedLEtter exists in the currentWOrd
     if(currentWord.includes(clickedLetter)) {
         // Showing all correct letters on the word display
         [...currentWord].forEach((letter, index) => {
             if(letter === clickedLetter) {
+                correctLetters.push(letter);
                 wordDisplay.querySelectorAll("li")[index].innerText = letter;
                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
             }
         });
     } else {
+        // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
         wrongGuessCount++;
         hangmanImage.src = `../images/hangman-${wrongGuessCount}.svg`
     }
+    button.disabled = true;
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
+    if(wrongGuessCount === maxGuesses) return gameOver(false);
+    if(correctLetters.length === currentWord.length) return gameOver(true);
 }
 
 
