@@ -26,17 +26,17 @@ const initGame = (button, clickedLetter) => {
         });
     } else {
         wrongGuessCount++;
-        hangmanImage.src = 'images/hangman-${wrongGuessCount).svg'
+        hangmanImage.src = `../images/hangman-${wrongGuessCount}.svg`
     }
-    guessesText.innerText = '${wrongGuessCount} / ${maxGuesses}';
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 }
 
 
 // Creating keyboard buttons and adding event listeners
-for (let i = 65; i <= 90; i++) {
+for (let i = 97; i <= 122; i++) {
     const button = document.createElement("button");
     button.innerText = String.fromCharCode(i);
-//    keyboardDiv.appendChild(button);
+    keyboardDiv.appendChild(button);
     button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));
 }
 
