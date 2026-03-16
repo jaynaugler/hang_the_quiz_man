@@ -42,6 +42,7 @@ body {
     background: #6e5982;
     border-radius: 4px;
     text-transform: uppercase;
+    padding: 0.25rem;
 }
 
 .gamemode-div button:hover {
