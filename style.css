@@ -9,6 +9,45 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
 }
 
+.main-elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gamemode-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 14px;
+}
+
+.gamemode-div h2 {
+    margin-right: 0.5rem;
+}
+
+.gamemode-div button {
+    margin: 0.5rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #6e5982;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.gamemode-div button:hover {
+    background: #b9a5c1;
+}
+
 .container {
     width: 850px;
     background: #fff;
