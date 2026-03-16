@@ -49,7 +49,7 @@ const wordList = [
         hint: "The scientific study of celestial objects and phenomena."
     },
     {
-        word: "football",
+        word: "soccer",
         hint: "A popular sport played with a spherical ball."
     },
     {
