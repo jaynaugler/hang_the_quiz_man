@@ -3,8 +3,50 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #5E63BA;
+    background: #d0c5d9;
     padding: 0 10px;
+    color: #392347;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.main-elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gamemode-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 14px;
+}
+
+.gamemode-div h2 {
+    margin-right: 0.5rem;
+}
+
+.gamemode-div button {
+    margin: 0.5rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #6e5982;
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 0.25rem;
+}
+
+.gamemode-div button:hover {
+    background: #b9a5c1;
 }
 
 .container {
@@ -62,7 +104,7 @@ body {
 }
 
 .game-box .guesses-text b {
-    color: #ff0000;
+    color: #e61efc;
 }
 
 .game-box .keyboard {
@@ -80,7 +122,7 @@ body {
     cursor: pointer;
     outline: none;
     border: none;
-    background: #5E63BA;
+    background: #6e5982;
     border-radius: 4px;
     text-transform: uppercase;
 }
@@ -97,7 +139,7 @@ body {
 }
 
 :where(.game-modal, .keyboard) button:hover {
-    background: #8286c9;
+    background: #b9a5c1;
 }
 
 .game-modal {
@@ -147,7 +189,7 @@ body {
 }
 
 .game-modal p b {
-    color: #5E63BA;
+    color: #d0c5d9;
     font-weight: 600;
 }
 
@@ -169,6 +211,8 @@ body {
     .hangman-box h1 {
         display: none;
     }
+}
+
 /* Fonts */
 /* roboto-regular - latin */
 @font-face {
@@ -185,5 +229,4 @@ body {
     font-style: normal;
     font-weight: 500;
     src: url('../fonts/roboto-v51-latin-500.woff2') format('woff2'); 
-}
 }
