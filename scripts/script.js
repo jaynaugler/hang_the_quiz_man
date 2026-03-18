@@ -6,6 +6,7 @@ const guessesText = document.querySelector(".guesses-text b")
 const wordDisplay = document.querySelector(".word-display");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = document.querySelector(".play-again");
+let activeWordList; // Store what question bank they're using
 
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6; // ALl games end at 6 wrong guesses, with option to play again
@@ -36,10 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Check which mode was selected and run the game
         if (gameMode === 'classic') {
             console.log("Setting up Classic Hangman...");
-            getRandomWord(wordList);
+            activeWordList = wordList; // Save the choice
+            getRandomWord(activeWordList);
             
         } else if (gameMode === 'quiz') {
             console.log("Setting up Quiz Hangman...");
+            activeWordList = quizWordList; // Save the choice
             getRandomWord(quizWordList);
             applyPinkTheme();
         }
@@ -117,9 +120,10 @@ for (let i = 97; i <= 122; i++) {
 }
 
 
-// Run the program and add the event listener for play again
-getRandomWord();
-playAgainBtn.addEventListener("click", getRandomWord);
+// Add the event listener for play again based on what game mode the user is in
+playAgainBtn.addEventListener("click", () => {
+    getRandomWord(activeWordList);
+});
 
 // Page styles for other game modes
 const themeStyles = `
