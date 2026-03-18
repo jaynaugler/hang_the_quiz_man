@@ -28,8 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const starterPopup = document.getElementById("starter-popup");
     const classicBtn = document.getElementById("classic-btn");
     const quizBtn = document.getElementById("quiz-btn");
+    const mainClassicBtn = document.getElementById("main-classic-btn"); // Main screen
+    const mainQuizBtn = document.getElementById("main-quiz-btn");       // Main screen
 
-// Function to handle loading the correct game based on user selection
+    // Function to handle loading the correct game based on user selection
     function startGame(gameMode) {
         // Hide the pop-up by adding the 'hidden' CSS class
         starterPopup.classList.add("hidden");
@@ -39,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Setting up Classic Hangman...");
             activeWordList = wordList; // Save the choice
             getRandomWord(activeWordList);
-            
+            removePinkTheme(); // Back to default theme for classic mode
+
         } else if (gameMode === 'quiz') {
             console.log("Setting up Quiz Hangman...");
             activeWordList = quizWordList; // Save the choice
@@ -48,23 +51,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 3. Attach click listeners to the buttons
-    classicBtn.addEventListener("click", () => {
-        startGame('classic');
-    });
-
-    quizBtn.addEventListener("click", () => {
-        startGame('quiz');
-    });
+    // Apply click event listeners to ALL 4 buttons
+    classicBtn.addEventListener("click", () => startGame('classic'));
+    quizBtn.addEventListener("click", () => startGame('quiz'));
+    mainClassicBtn.addEventListener("click", () => startGame('classic'));
+    mainQuizBtn.addEventListener("click", () => startGame('quiz'));
 });
 
 
-    // For the JS quiz and default word bank, set the colour theme to pink
+// For the default word bank, set the colour theme to pink
 function applyPinkTheme() {
-    const styleSheet = document.createElement("style");
-    styleSheet.id = "custom-pink-theme";
-    styleSheet.innerText = themeStyles;
-    document.head.appendChild(styleSheet);
+    if (!document.getElementById("custom-pink-theme")) {
+        const styleSheet = document.createElement("style");
+        styleSheet.id = "custom-pink-theme";
+        styleSheet.innerHTML = themeStyles;
+        document.head.appendChild(styleSheet);
+    }
+}
+
+function removePinkTheme() {
+    // Find the theme and remove it if it exists (going back to default questions)
+    const existingTheme = document.getElementById("custom-pink-theme");
+    if (existingTheme) {
+        existingTheme.remove();
+    }
 }
 
 // Based on which question bank, bring in the word and hint, and remove what was there previously
@@ -90,10 +100,10 @@ const gameOver = (isVictory) => {
 // Logic for handling guesses, and to grey out guessed letters, or add hangman image based on num of wrong guesses
 const initGame = (button, clickedLetter) => {
     // Checking if clickedLEtter exists in the currentWOrd
-    if(currentWord.includes(clickedLetter)) {
+    if (currentWord.includes(clickedLetter)) {
         // Showing all correct letters on the word display
         [...currentWord].forEach((letter, index) => {
-            if(letter === clickedLetter) {
+            if (letter === clickedLetter) {
                 correctLetters.push(letter);
                 wordDisplay.querySelectorAll("li")[index].innerText = letter;
                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
@@ -106,8 +116,8 @@ const initGame = (button, clickedLetter) => {
     }
     button.disabled = true;
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
-    if(wrongGuessCount === maxGuesses) return gameOver(false);
-    if(correctLetters.length === currentWord.length) return gameOver(true);
+    if (wrongGuessCount === maxGuesses) return gameOver(false);
+    if (correctLetters.length === currentWord.length) return gameOver(true);
 }
 
 
