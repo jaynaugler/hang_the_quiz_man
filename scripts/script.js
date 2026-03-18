@@ -70,7 +70,7 @@ function applyPinkTheme() {
 }
 
 function removePinkTheme() {
-    // Find the theme and remove it if it exists (going back to default questions)
+    // Find the theme and remove it if it exists (for going back to default questions)
     const existingTheme = document.getElementById("custom-pink-theme");
     if (existingTheme) {
         existingTheme.remove();
@@ -135,7 +135,7 @@ playAgainBtn.addEventListener("click", () => {
     getRandomWord(activeWordList);
 });
 
-// Page styles for other game modes
+// Page styles for Quiz game mode
 const themeStyles = `
   body { 
     color: #8a2245; 
