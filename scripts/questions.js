@@ -291,52 +291,48 @@ const wordList = [
 // Javascript quiz question hangman hint/word word bank
 
 const quizWordList = [
-  {
-    question: "The HTML element used to create a numbered list",
-    hint: "ordered list"
-  },
-  {
-    question: "The CSS property used to change the background color",
-    hint: "background"
-  },
-  {
-    question: "The JavaScript keyword used to declare a constant variable",
-    hint: "const"
-  },
-  {
-    question: "The HTML tag used to define a hyperlink",
-    hint: "anchor"
-  },
-  {
-    question: "The CSS property that controls the space inside an element",
-    hint: "padding"
-  },
-  {
-    question: "The JavaScript function used to display a popup message",
-    hint: "alert"
-  },
-  {
-    question: "The HTML element used for the largest heading",
-    hint: "h1"
-  },
-  {
-    question: "The CSS property used to make text bold",
-    hint: "font weight"
-  },
-  {
-    question: "The JavaScript method used to add an item to the end of an array",
-    hint: "push"
-  },
-  {
-    question: "The HTML attribute that provides alternative text for an image",
-    hint: "alt"
-  },
-  {
-    question: "The CSS layout model designed for one dimensional content",
-    hint: "flexbox"
-  },
-  {
-    question: "The JavaScript data type that represents true or false",
-    hint: "boolean"
-  }
+{
+    word: "ordered list",
+    hint: "The HTML element used to create a numbered list"
+},
+{
+    word: "background",
+    hint: "The CSS property used to change the background color"
+},
+{
+    word: "const",
+    hint: "The JavaScript keyword used to declare a constant variable"
+},
+{
+    word: "anchor",
+    hint: "The HTML tag used to define a hyperlink"
+},
+{
+    word: "padding",
+    hint: "The CSS property that controls the space inside an element"
+},
+{
+    word: "alert",
+    hint: "The JavaScript function used to display a popup message"
+},
+{
+    word: "font weight",
+    hint: "The CSS property used to make text bold"
+},
+{
+    word: "push",
+    hint: "The JavaScript method used to add an item to the end of an array"
+},
+{
+    word: "alt",
+    hint: "The HTML attribute that provides alternative text for an image"
+},
+{
+    word: "flexbox",
+    hint: "The CSS layout model designed for one dimensional content"
+},
+{
+    word: "boolean",
+    hint: "The JavaScript data type that represents true or false"
+}
 ];
