@@ -19,9 +19,13 @@ const resetGame = () => {
     wordDisplay.innerHTML = currentWord.split("").map(() => '<li class="letter"></li>').join("");
 }
 
-const getRandomWord = () => {
+function switchGame(gameMode) {
+    
+}
+
+const getRandomWord = (questionBank) => {
     // Selecting a random word and hint from the wordList in questions.js
-    const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+    const { word, hint } = questionBank[Math.floor(Math.random() * questionBank.length)];
     currentWord = word;
     document.querySelector(".hint-text b").innerText = hint;
     resetGame();

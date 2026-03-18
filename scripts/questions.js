@@ -1,29 +1,30 @@
+// Hangman word/hint set for 'animal questions' mode
 const animalData = [
-    { word: "AARDVARK", definition: "A burrowing African mammal that feeds on ants and termites." },
-    { word: "BABOON", definition: "A large monkey with a dog-like face found in Africa and Asia." },
-    { word: "BEAVER", definition: "A large aquatic rodent known for building dams." },
-    { word: "CHAMELEON", definition: "A lizard that can change color to match its surroundings." },
-    { word: "COUGAR", definition: "A large, brown American wild cat, also known as a puma or mountain lion." },
-    { word: "DOLPHIN", definition: "An intelligent marine mammal known for its playful behavior." },
-    { word: "EAGLE", definition: "A large bird of prey with keen eyesight." },
-    { word: "FERRET", definition: "A domesticated, slender animal related to the weasel." },
-    { word: "GIRAFFE", definition: "A tall African mammal with a very long neck." },
-    { word: "GOPHER", definition: "A burrowing rodent with large cheek pouches." },
-    { word: "IGUANA", definition: "A large lizard often kept as a pet." },
-    { word: "JAGUAR", definition: "A large, spotted cat found in Central and South America." },
-    { word: "KANGAROO", definition: "An Australian marsupial that hops on its hind legs." },
-    { word: "LEOPARD", definition: "A large, spotted wild cat, smaller than a jaguar." },
-    { word: "MOLE", definition: "A small mammal that digs tunnels and lives underground." },
-    { word: "NARWHAL", definition: "A small Arctic whale, with the male having a long, straight tusk." },
-    { word: "PLATYPUS", definition: "An Australian egg-laying mammal with a duck-like bill." },
-    { word: "QUOKKA", definition: "A small, friendly Australian marsupial often called the happiest animal." },
-    { word: "RAVEN", definition: "A large, black bird known for its intelligence." },
-    { word: "RHINO", definition: "A massive animal with one or two horns on its snout." },
-    { word: "SLOTH", definition: "A slow-moving, tree-dwelling mammal from Central/South America." },
-    { word: "TOUCAN", definition: "A tropical bird with a very large, colorful beak." },
-    { word: "WALRUS", definition: "A large marine mammal with long tusks and flippers." },
-    { word: "WOMBAT", definition: "A sturdy, burrowing Australian marsupial." },
-    { word: "ZEBRA", definition: "An African wild horse with black-and-white stripes." }
+    { word: "AARDVARK", hint: "A burrowing African mammal that feeds on ants and termites." },
+    { word: "BABOON", hint: "A large monkey with a dog-like face found in Africa and Asia." },
+    { word: "BEAVER", hint: "A large aquatic rodent known for building dams." },
+    { word: "CHAMELEON", hint: "A lizard that can change color to match its surroundings." },
+    { word: "COUGAR", hint: "A large, brown American wild cat, also known as a puma or mountain lion." },
+    { word: "DOLPHIN", hint: "An intelligent marine mammal known for its playful behavior." },
+    { word: "EAGLE", hint: "A large bird of prey with keen eyesight." },
+    { word: "FERRET", hint: "A domesticated, slender animal related to the weasel." },
+    { word: "GIRAFFE", hint: "A tall African mammal with a very long neck." },
+    { word: "GOPHER", hint: "A burrowing rodent with large cheek pouches." },
+    { word: "IGUANA", hint: "A large lizard often kept as a pet." },
+    { word: "JAGUAR", hint: "A large, spotted cat found in Central and South America." },
+    { word: "KANGAROO", hint: "An Australian marsupial that hops on its hind legs." },
+    { word: "LEOPARD", hint: "A large, spotted wild cat, smaller than a jaguar." },
+    { word: "MOLE", hint: "A small mammal that digs tunnels and lives underground." },
+    { word: "NARWHAL", hint: "A small Arctic whale, with the male having a long, straight tusk." },
+    { word: "PLATYPUS", hint: "An Australian egg-laying mammal with a duck-like bill." },
+    { word: "QUOKKA", hint: "A small, friendly Australian marsupial often called the happiest animal." },
+    { word: "RAVEN", hint: "A large, black bird known for its intelligence." },
+    { word: "RHINO", hint: "A massive animal with one or two horns on its snout." },
+    { word: "SLOTH", hint: "A slow-moving, tree-dwelling mammal from Central/South America." },
+    { word: "TOUCAN", hint: "A tropical bird with a very large, colorful beak." },
+    { word: "WALRUS", hint: "A large marine mammal with long tusks and flippers." },
+    { word: "WOMBAT", hint: "A sturdy, burrowing Australian marsupial." },
+    { word: "ZEBRA", hint: "An African wild horse with black-and-white stripes." }
 ];
 
 // Default Hangman questions
@@ -288,4 +289,57 @@ const wordList = [
         word: "brilliant",
         hint: "Exceptionally clever, talented, or impressive."
     },
+];
+
+// Javascript quiz question hangman hint/word word bank
+
+const hangmanData = [
+  {
+    question: "The HTML element used to create a numbered list",
+    hint: "ordered list"
+  },
+  {
+    question: "The CSS property used to change the background color",
+    hint: "background"
+  },
+  {
+    question: "The JavaScript keyword used to declare a constant variable",
+    hint: "const"
+  },
+  {
+    question: "The HTML tag used to define a hyperlink",
+    hint: "anchor"
+  },
+  {
+    question: "The CSS property that controls the space inside an element",
+    hint: "padding"
+  },
+  {
+    question: "The JavaScript function used to display a popup message",
+    hint: "alert"
+  },
+  {
+    question: "The HTML element used for the largest heading",
+    hint: "h1"
+  },
+  {
+    question: "The CSS property used to make text bold",
+    hint: "font weight"
+  },
+  {
+    question: "The JavaScript method used to add an item to the end of an array",
+    hint: "push"
+  },
+  {
+    question: "The HTML attribute that provides alternative text for an image",
+    hint: "alt"
+  },
+  {
+    question: "The CSS layout model designed for one dimensional content",
+    hint: "flexbox"
+  },
+  {
+    question: "The JavaScript data type that represents true or false",
+    hint: "boolean"
+  }
 ];
