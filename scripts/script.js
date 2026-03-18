@@ -22,11 +22,41 @@ const resetGame = () => {
 }
 
 // Allow the user to select which game mode (set of questions) they want to use
-function selectGame(gameMode) {
-    
-}
+document.addEventListener("DOMContentLoaded", () => {
+    // Grab the HTML elements from the popup
+    const starterPopup = document.getElementById("starter-popup");
+    const classicBtn = document.getElementById("classic-btn");
+    const quizBtn = document.getElementById("quiz-btn");
 
-// FOr the JS quiz and default word bank, set the colour theme to pink
+// Function to handle loading the correct game based on user selection
+    function startGame(gameMode) {
+        // Hide the pop-up by adding the 'hidden' CSS class
+        starterPopup.classList.add("hidden");
+
+        // Check which mode was selected and run the game
+        if (gameMode === 'classic') {
+            console.log("Setting up Classic Hangman...");
+            getRandomWord(wordList);
+            
+        } else if (gameMode === 'quiz') {
+            console.log("Setting up Quiz Hangman...");
+            getRandomWord(quizWordList);
+            applyPinkTheme();
+        }
+    }
+
+    // 3. Attach click listeners to the buttons
+    classicBtn.addEventListener("click", () => {
+        startGame('classic');
+    });
+
+    quizBtn.addEventListener("click", () => {
+        startGame('quiz');
+    });
+});
+
+
+    // For the JS quiz and default word bank, set the colour theme to pink
 function applyPinkTheme() {
     const styleSheet = document.createElement("style");
     styleSheet.id = "custom-pink-theme";
@@ -90,3 +120,20 @@ for (let i = 97; i <= 122; i++) {
 // Run the program and add the event listener for play again
 getRandomWord();
 playAgainBtn.addEventListener("click", getRandomWord);
+
+// Page styles for other game modes
+const themeStyles = `
+  body { 
+    color: #8a2245; 
+    background: #f7c1d1; 
+  }
+
+  .gamemode-div button { background: #c0567c; }
+  :where(.game-modal, .keyboard) button { background: #c0567c; }
+
+  .gamemode-div button:hover { background: #d686a0; }
+  :where(.game-modal, .keyboard) button:hover { background: #d686a0; }
+
+  .game-modal p b { color: #f7c1d1; }
+  .game-box .guesses-text b { color: #ff5487; }
+`;

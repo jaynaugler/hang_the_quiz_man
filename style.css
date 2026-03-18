@@ -279,19 +279,3 @@ body {
     src: url('../fonts/roboto-v51-latin-500.woff2') format('woff2'); 
 }
 
-/* Page styles for other game modes */
-const themeStyles = `
-  body { 
-    color: #8a2245; 
-    background: #f7c1d1; 
-  }
-
-  .gamemode-div button { background: #c0567c; }
-  :where(.game-modal, .keyboard) button { background: #c0567c; }
-
-  .gamemode-div button:hover { background: #d686a0; }
-  :where(.game-modal, .keyboard) button:hover { background: #d686a0; }
-
-  .game-modal p b { color: #f7c1d1; }
-  .game-box .guesses-text b { color: #ff5487; }
-`;
