@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Popup window to select gamemode -->
     <div id="starter-popup" class="popup-overlay">
         <div class="popup-content">
             <h2>Choose your gamemode: </h2>
@@ -15,6 +16,7 @@
             <button id="quiz-btn" class="mode-btn">Quiz Hangman</button>
         </div>
     </div>
+<!-- Game over popup -->
     <div class="game-modal">
         <div class="content">
             <img src="" alt="gif">
@@ -23,18 +25,19 @@
             <button class="play-again">Play Again?</button>
         </div>
     </div>
-
+<!-- Gamemode buttons on screen -->
     <div class="main-elements">
         <div class="gamemode-div">
             <h2>Gamemode:</h2>
             <button>Classic</button><button>Quiz</button>
         </div>
-        
+<!-- Hangman images -->
         <div class="container">
             <div class="hangman-box">
                 <img src="images/hangman-0.svg" alt="hangman-img">
                 <h1>Hangman Quiz</h1>
             </div>
+<!-- Word length indicators -->
             <div class="game-box">
                 <ul class="word-display">
                     <li class="letter guessed"></li>
@@ -46,10 +49,12 @@
                     <li class="letter"></li>
                     <li class="letter"></li>
                 </ul>
+<!-- Hint text (with filler text) -->
                 <h4 class="hint-text">
                     Hint:
                     <b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b>
                 </h4>
+<!-- Text showing incorrect letter guesses -->
                 <h4 class="guesses-text">
                     Incorrect guesses:
                     <b>0 / 6</b>
@@ -61,9 +66,7 @@
 
 
 
-
-
 <script src="scripts/questions.js" defer></script>
 <script src="scripts/script.js" defer></script>
 </body>
- </html>
+</html>
