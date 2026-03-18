@@ -1,4 +1,5 @@
 
+// Initialize variables for all of the elements the game needs to interact with
 const hangmanImage = document.querySelector(".hangman-box img");
 const keyboardDiv = document.querySelector(".keyboard");
 const guessesText = document.querySelector(".guesses-text b")
@@ -7,8 +8,9 @@ const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = document.querySelector(".play-again");
 
 let currentWord, correctLetters, wrongGuessCount;
-const maxGuesses = 6;
+const maxGuesses = 6; // ALl games end at 6 wrong guesses, with option to play again
 
+// Reset the state of the game on initial load OR try again
 const resetGame = () => {
     correctLetters = [];
     wrongGuessCount = 0;
@@ -19,10 +21,20 @@ const resetGame = () => {
     wordDisplay.innerHTML = currentWord.split("").map(() => '<li class="letter"></li>').join("");
 }
 
-function switchGame(gameMode) {
+// Allow the user to select which game mode (set of questions) they want to use
+function selectGame(gameMode) {
     
 }
 
+// FOr the JS quiz and default word bank, set the colour theme to pink
+function applyPinkTheme() {
+    const styleSheet = document.createElement("style");
+    styleSheet.id = "custom-pink-theme";
+    styleSheet.innerText = themeStyles;
+    document.head.appendChild(styleSheet);
+}
+
+// Based on which question bank, bring in the word and hint, and remove what was there previously
 const getRandomWord = (questionBank) => {
     // Selecting a random word and hint from the wordList in questions.js
     const { word, hint } = questionBank[Math.floor(Math.random() * questionBank.length)];
@@ -31,6 +43,7 @@ const getRandomWord = (questionBank) => {
     resetGame();
 }
 
+// Display the popup for victory or loss, and show the word the user was guessing
 const gameOver = (isVictory) => {
     setTimeout(() => {
         const modalText = isVictory ? `You found the word:` : `The correct word was:`;
@@ -41,7 +54,7 @@ const gameOver = (isVictory) => {
     }, 300);
 }
 
-
+// Logic for handling guesses, and to grey out guessed letters, or add hangman image based on num of wrong guesses
 const initGame = (button, clickedLetter) => {
     // Checking if clickedLEtter exists in the currentWOrd
     if(currentWord.includes(clickedLetter)) {
@@ -74,6 +87,6 @@ for (let i = 97; i <= 122; i++) {
 }
 
 
-
+// Run the program and add the event listener for play again
 getRandomWord();
 playAgainBtn.addEventListener("click", getRandomWord);
