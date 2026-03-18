@@ -1,3 +1,6 @@
+// Coding by: Kitt and Jay
+// Program: IT Web Programming
+// Date: March 18th 2026
 
 // Initialize variables for all of the elements the game needs to interact with
 const hangmanImage = document.querySelector(".hangman-box img");
